@@ -5,13 +5,6 @@ import { Column, Entity, JoinColumn, ManyToOne, OneToMany } from "typeorm";
 
 @Entity('Video')
 export class VideoEntity extends Base {
-    // @ManyToOne(() => UserEntity, user => user.videos)
-    // @JoinColumn({ name: 'user_id' })
-    // user: UserEntity
-
-
-
-
     @Column({ default: '' })
     name: string
 
