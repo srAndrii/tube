@@ -58,7 +58,7 @@ export class UserService {
 
     async subscribe(id: number, channelId: number) {
         const data = {
-            toChanel: [{ id: channelId }],
+            toChanel: { id: channelId },
             fromUser: { id }
         }
         const isSubscribed = await this.subscriptionRepository.findOneBy(data)
