@@ -5,8 +5,11 @@ import { Column, Entity, JoinColumn, ManyToOne, OneToMany } from "typeorm";
 
 @Entity('Video')
 export class VideoEntity extends Base {
-    @Column({ default: '' })
+    @Column()
     name: string
+
+    @Column({ default: false, name: 'is_public' })
+    isPublic: boolean
 
     @Column({ default: 0 })
     views?: number

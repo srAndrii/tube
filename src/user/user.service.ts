@@ -9,6 +9,12 @@ import { genSalt, hash } from 'bcryptjs';
 
 @Injectable()
 export class UserService {
+    constructor(
+        @InjectRepository(UserEntity)
+        private readonly userRepository: Repository<UserEntity>,
+        @InjectRepository(SubscriptionEntity)
+        private readonly subscriptionRepository: Repository<SubscriptionEntity>,
+    ) { }
 
     async byId(id: number) {
         const user = await this.userRepository.findOne({
@@ -48,12 +54,7 @@ export class UserService {
         return this.userRepository.save(user)
     }
 
-    constructor(
-        @InjectRepository(UserEntity)
-        private readonly userRepository: Repository<UserEntity>,
-        @InjectRepository(SubscriptionEntity)
-        private readonly subscriptionRepository: Repository<SubscriptionEntity>,
-    ) { }
+
 
 
     async subscribe(id: number, channelId: number) {
