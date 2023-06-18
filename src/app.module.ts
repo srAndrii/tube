@@ -8,6 +8,7 @@ import { UserModule } from './user/user.module';
 import { VideoModule } from './video/video.module';
 import { CommentModule } from './comment/comment.module';
 import { AuthModule } from './auth/auth.module';
+import { MediaModule } from './media/media.module';
 
 @Module({
   imports: [
@@ -20,7 +21,8 @@ import { AuthModule } from './auth/auth.module';
     UserModule,
     VideoModule,
     CommentModule,
-    AuthModule
+    AuthModule,
+    MediaModule
   ],
   controllers: [AppController],
   providers: [AppService],
